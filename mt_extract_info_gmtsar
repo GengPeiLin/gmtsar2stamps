@@ -1,0 +1,19 @@
+#!/bin/bash 
+
+#
+# Extract info from various files for use by StaMPS
+#
+
+SLC_OSF="1"  # check if oversampled or not
+echo $SLC_OSF > slc_osfactor.1.in                 # put oversampling factor to file 
+
+# Create other input files for PS candidates
+awk '{printf("%7.2f\n", $5)}' baseline_info.dat > bperp.1.in
+awk '{printf("%d\n", $1)}' baseline_info.dat > day.1.in
+#awk '{print $3}' list > day.1.in
+#echo "19930112" > master_day.1.in
+echo "20051007" > master_day.1.in
+echo "-166.4412977" > heading.1.in # for ENVI 
+ln -s ../raw/*LED .
+ln -s ../topo/master.PRM .
+grep radar_wavelength master.PRM | awk '{print $3}' > lambda.1.in # in meters
