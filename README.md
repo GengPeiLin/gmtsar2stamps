@@ -1,9 +1,10 @@
-## gmtsar2stamps
-# This is a set of programs that enable you to run StaMPS with output file from GMTSAR or GMT5SAR
-# It has been tested on ERS and ENVISAT and ALOS-1 data.
-# Xiaopeng Tong, University of Washington, Seattle, Feb 2016
+# gmtsar2stamps
 
-# Steps:
+ This is a set of programs that enable you to run StaMPS with output file from GMTSAR or GMT5SAR
+ It has been tested on ERS and ENVISAT and ALOS-1 data.
+ Xiaopeng Tong, University of Washington, Seattle, Feb 2016
+
+ Steps:
 1. run dispersion.csh in the SLC/ folder to make amplitude dispersion index (full resolution).
 2. modify filter.csh to generate interferograms with real.grd and imag.grd file (full resolution).
 3. make a stack/ folder parallel to intf/, raw/, topo/ and SLC/
